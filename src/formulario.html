@@ -1,18 +1,24 @@
 <!-- ANCHOR -->
-<h2>Formulario dinamico</h2>
-<form action="novapagina.html">
-    <!-- TAG FORM COM ATRIBUTO action -->
-    <!-- DOM - Document Object Model -->
-    Numero 1: <input name="campo1" id="numero1" value="10000"><br> <!-- TAG INPUT -->
-    Numero 2: <input name="campo2" id="numero2"> <!-- VOID TAGS -->
-    <button onclick="somar(event)" type="submit">+</button>
-    <button onclick="subtrair(event)" type="submit">-</button>
-    <button onclick="dividir(event)" type="submit">/</button>
-    <button onclick="multiplicar(event)" type="submit">*</button>
-    <button onclick="comparar()" type="button">Comparar</button><br>
-    <button onclick="testarVar()" type="button">Testar var</button><br>
-    <button onclick="testarLet()" type="button">Testar Let</button><br>
-    <button onclick="adicionar()" type="button">Adicionar Campo</button><br>
-    <button type="button">LOADER</button><br>
-    <button type="submit">SUBMETER FORMULARIO</button>
-</form>
+<div class="form">
+<h2>Formulário</h2>
+    <form action="novapagina.html">
+        <!-- TAG FORM COM ATRIBUTO action -->
+        <!-- DOM - Document Object Model -->
+        Numero 1: <input name="campo1" id="numero1" value="10000"><br> <!-- TAG INPUT -->
+        Numero 2: <input name="campo2" id="numero2"> <!-- VOID TAGS -->
+        <p>
+            <button class="btn btn-secondary" onclick="somar(event)" type="submit">+</button>
+            <button class="btn btn-secondary" onclick="subtrair(event)" type="submit">-</button>
+            <button class="btn btn-secondary" onclick="dividir(event)" type="submit">/</button>
+            <button class="btn btn-secondary" onclick="multiplicar(event)" type="submit">*</button>
+            <button class="btn btn-secondary" onclick="comparar()" type="button">Comparar</button><br>
+        </p>
+        <p>
+            <!---<button class="btn btn-light" onclick="testarVar()" type="button">Testar var</button><br>
+            <button class="btn btn-light" onclick="testarLet()" type="button">Testar Let</button><br>
+            <button class="btn btn-light" onclick="adicionar()" type="button">Adicionar Campo</button><br>
+            <button class="btn btn-light" type="button">Loader</button><br>
+            <button class="btn btn-light" type="submit">Enviar</button>---->
+        </p>
+    </form>
+</div>

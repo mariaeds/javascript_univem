@@ -19,7 +19,7 @@ function carregarConteudo() {
             html = "/src/list_produto.html";
             carregouPaginaProduto();
             break;
-        case "/registrar":
+        case "/register":
             html = "/src/register.html";
             break;
     }

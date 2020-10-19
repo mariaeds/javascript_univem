@@ -2,3 +2,36 @@
     border: 5px solid #f00;
     margin: 20px;
 } */
+
+.form{
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    background: #F5F5F5;
+    box-shadow: 2px 4px 12px -1px rgba(0,0,0,0.75);
+    margin-top: 2%;
+}
+
+.form input{
+    margin-top: 3%;
+}
+
+.form button{
+    margin-top: 3%;
+}
+
+.form p{
+    margin-top: 3%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+}
