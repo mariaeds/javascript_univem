@@ -20,7 +20,22 @@ async function buscarCep(event) {
         logradouro.value = endereco.logradouro;
 
         let numero = document.querySelector("form input[name=numero]");
-        numero.focus();
+        
+        arr = [cidade, bairro, uf,logradouro];
+
+        const foco = ''
+        for(var i = 0; i < arr.length;i++){
+            if(arr[i].value == ""){
+                foco = arr[i];
+                break                
+            }
+        }
+
+        if (foco == ""){
+            numero.focus();
+        }else{
+            foco.focus();
+        }
     }
 }
 
