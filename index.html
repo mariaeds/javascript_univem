@@ -11,57 +11,74 @@ html
             - button
  -->
 
-<html>
+<!-- 
+html
+    - head (NODE HEAD)
+        - script
+        - link
+    - body (ELEMENT BODY)
+        - form
+            - input1
+            - input
+            - button
+            - button
+ -->
 
-<head>
-    <script src="/js/register.js"></script>
-    <script src="/js/produto.js"></script>
-    <script src="/js/categoria.js"></script>
-    <script src="/js/codigo.js"></script>
-    <script src="/js/router.js"></script>
-    <link rel="stylesheet" href="/css/estilo.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-</head>
+ <html>
 
-<body>
-    <div>
-        <nav class="navbar navbar-expand bg-light">
-            <div class="navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="transitionTo(event, '/')">Pagina Inicial </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="transitionTo(event, '/novaPagina')"> Nova Pagina</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="transitionTo(event, '/primo')"> Primo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="transitionTo(event, '/categoria')"> Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="transitionTo(event, '/produto')"> Produtos</a>
-                    </li>
-                   <li class="nav-item">
-                        <button class="btn btn-light" onclick="testar()" type="button">Testar</button><br>
-                    </li>
-                </ul>
-                <form>
-                    <div class="pull-right">
-                        <button class="btn btn-primary" type="button"
-                            onclick="transitionTo(event, '/register')">Registrar</button>
+    <head>
+        <script src="/js/userControl.js"></script>
+        <script src="/js/utils.js"></script>
+        <script src="/js/register.js"></script>
+        <script src="/js/login.js"></script>
+        <script src="/js/produto.js"></script>
+        <script src="/js/categoria.js"></script>
+        <script src="/js/codigo.js"></script>
+        <script src="/js/router.js"></script>
+        <link rel="stylesheet" href="../css/estilo.css">
+        <!---<link rel="stylesheet" href="/css/bootstrap.min.css">--->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="content">
+            <div class="menu-bar">
+                <div class="header-nav-item">
+                    <a class="header-nav-item" href="#" onclick="transitionTo(event, '/')">Pagina Inicial </a>
+                </div>
+                <div class="header-nav-item">
+                    <a class="header-nav-item" href="#" onclick="transitionTo(event, '/novaPagina')"> Nova Pagina</a>
+                </div>
+                <div class="header-nav-item">
+                    <a class="header-nav-item" href="#" onclick="transitionTo(event, '/primo')"> Primo</a>
+                </div>
+                <div class="header-nav-item">
+                    <a class="header-nav-item" href="#" onclick="transitionTo(event, '/categoria')"> Categorias</a>
+                </div>
+                <div class="header-nav-item">
+                    <a class="header-nav-item" href="#" onclick="transitionTo(event, '/produto')"> Produtos</a>
+                </div>
+            <form>
+                <div class="forms">
+                    <div class="is-not-logged">
+                        <button class="btn" type="button"
+                            onclick="transitionTo(event, '/registrar')">Registrar</button>
+                        <button class="btn" type="button"
+                            onclick="transitionTo(event, '/login')">Login</button>
                     </div>
-                </form>
-            </div>
-        </nav>
-        <div id="container" class="content conteudo corpo-pagina etc-etc">
-
+                    <div class="is-logged">
+                        <b id="welcome"></b>
+                        <button type="button" class="btn" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <!-- <div style="position:fixed;top:0;width:100%;height:100%">
-        LOADER
-    </div> -->
-    </div>
-</body>
-
-</html>
+    <div id="container" class="content conteudo corpo-pagina etc-etc">
+            
+        </div>
+            
+        </div>
+    </body>
+    
+    </html>
+    

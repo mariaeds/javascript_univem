@@ -39,17 +39,6 @@ async function buscarCep(event) {
     }
 }
 
-function formDataToJson(form) {
-    let data = new FormData(form);
-    let jsonObj = {};
-
-    for (const item of data.keys()) {
-        let v = data.get(item);
-        jsonObj[item] = v;
-    }
-    return jsonObj;
-}
-
 async function registrar(event) {
     event.preventDefault();
     let form = event.target;
@@ -59,9 +48,7 @@ async function registrar(event) {
 
     let jsonString = JSON.stringify(jsonBody);
 
-    const urlApi = "https://javascriptunivem.azurewebsites.net";
-
-    let res = await fetch(urlApi + "/api/usuario", {
+    let res = await sendRequest("/api/usuario", {
         method: "POST",
         body: jsonString,
         headers: {
@@ -69,9 +56,16 @@ async function registrar(event) {
         }
     });
 
+    const log = document.querySelector('div.log');
+
     if (res.status == 200) {
         alert("Cadastrado com sucesso! Vá para a pagina de login");
-    } else {
-        alert("Houve erro na criacao do usuario")
+    } else if(res.status == 422){
+        const erros = await res.json();
+        erros.errors.forEach(erro => {
+            let campo = document.createElement('p');
+            campo.appendChild(document.createTextNode(`${erro.field}`));
+            log.appendChild(campo);
+        });
     }
 }
