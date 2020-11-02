@@ -62,10 +62,24 @@ async function registrar(event) {
         alert("Cadastrado com sucesso! Vá para a pagina de login");
     } else if(res.status == 422){
         const erros = await res.json();
+        const arrErros = []
         erros.errors.forEach(erro => {
-            let campo = document.createElement('p');
-            campo.appendChild(document.createTextNode(`${erro.field}`));
-            log.appendChild(campo);
+            arrErros.push(erro.field);
         });
+        const state = document.querySelector('div.state');
+        const pErr = document.createElement('p');
+
+        pErr.innerText = "*Preencha os campos: ";
+
+        arrErros.forEach(function(campo,i){
+            if(i == arrErros.length - 1){
+                pErr.innerText += ` ${campo}.`;
+            }else{
+                pErr.innerText += ` ${campo},`;
+            }
+            
+        })
+
+        state.appendChild(pErr);
     }
 }

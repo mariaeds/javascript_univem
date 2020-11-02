@@ -3,8 +3,6 @@ function getHtml() {
     switch (path) { // verifica qual é a rota
         case "/":
             return "/src/formulario.html";
-        case "/novaPagina":
-            return "/src/novapagina.html";
         case "/primo":
             return "/src/primo.html";
         case "/categoria":

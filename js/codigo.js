@@ -225,12 +225,15 @@ function isPrimo(num) {
 
 function verificaPrimo() {
     let numero = document.getElementById("numero_primo").value;
-    numero = parseInt(numero);
-
-    if (isPrimo(numero)) {
-        alert("O numero " + numero + " eh primo!!");
-    } else {
-        alert("O numero " + numero + " nao eh primo!!");
+    if(numero != ""){
+        numero = parseInt(numero);
+        if (isPrimo(numero)) {
+            alert("O numero " + numero + " eh primo!!");
+        } else {
+            alert("O numero " + numero + " nao eh primo!!");
+        }
+    }else{
+        alert("Digite um ou mais algarismos");
     }
 }
 

@@ -86,8 +86,27 @@ async function saveCategoria(event) {
         alert("Categoria cadastrada com sucesso!");
         transitionTo(null, "/categoria");
     }
-    else {
-        alert("Houve erro na sua solicitação!");
+    else if(resposta.status == 422){
+        const erros = await resposta.json();
+        const arrErros = []
+        erros.errors.forEach(erro => {
+            arrErros.push(erro.field);
+        });
+        const state = document.querySelector('div.state');
+        const pErr = document.createElement('p');
+
+        pErr.innerText = "*Preencha os campos: ";
+
+        arrErros.forEach(function(campo,i){
+            if(i == arrErros.length - 1){
+                pErr.innerText += ` ${campo}.`;
+            }else{
+                pErr.innerText += ` ${campo},`;
+            }
+            
+        })
+
+        state.appendChild(pErr);
     }
 }
 
